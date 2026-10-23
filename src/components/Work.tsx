@@ -45,25 +45,29 @@ export default function Work() {
         </div>
       </Reveal>
 
-      <motion.div layout className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3 xl:columns-4">
         <AnimatePresence mode="popLayout">
           {shown.map((item) => (
             <motion.article
-              layout
               key={item.src}
-              initial={{ opacity: 0, scale: 0.94 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.94 }}
+              exit={{ opacity: 0, scale: 0.96 }}
               transition={{ duration: 0.35, ease: [0.22, 0.8, 0.24, 1] }}
+              className="mb-6 break-inside-avoid"
             >
               <TiltCard>
                 <div className="relative">
                   <Image
                     src={item.src}
                     alt={`${item.title} — ${item.note}`}
-                    width={640}
-                    height={800}
-                    className="aspect-[4/5] w-full object-cover"
+                    width={item.w}
+                    height={item.h}
+                    className={
+                      item.category === "Web"
+                        ? "aspect-[3/4] w-full object-cover object-top"
+                        : "h-auto w-full"
+                    }
                     loading="lazy"
                   />
                   <span className="absolute top-3 left-3 rounded-full bg-ink/80 px-3 py-1 text-[11px] font-bold tracking-wide text-amber uppercase backdrop-blur-sm">
@@ -79,7 +83,7 @@ export default function Work() {
             </motion.article>
           ))}
         </AnimatePresence>
-      </motion.div>
+      </div>
     </section>
   );
 }

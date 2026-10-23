@@ -33,6 +33,8 @@ export const stats: Stat[] = [
 
 export type WorkItem = {
   src: string;
+  w: number;
+  h: number;
   title: string;
   client: string;
   category: "Campaigns" | "Social" | "AI Content" | "Pinterest" | "Web";
@@ -40,26 +42,26 @@ export type WorkItem = {
 };
 
 export const work: WorkItem[] = [
-  { src: "/work/poster-career-connect.jpg", title: "Career Connect ’26", client: "Austrak Immigration", category: "Campaigns", note: "Event poster for UBIT, University of Karachi" },
-  { src: "/work/poster-visa-success.jpg", title: "Skilled Visa Success Story", client: "Austrak Immigration", category: "Campaigns", note: "AI-assisted success-story creative" },
-  { src: "/work/poster-germany.jpg", title: "Germany Opportunity Card", client: "Austrak Immigration", category: "Campaigns", note: "Consultancy campaign poster" },
-  { src: "/work/poster-meet-greet.jpg", title: "Meet & Greet — Study Abroad", client: "Austrak Immigration", category: "Campaigns", note: "Event creative and promotion" },
-  { src: "/work/post-it-1.jpg", title: "Study in Italy", client: "Study Abroad", category: "Social", note: "Social post design" },
-  { src: "/work/post-study.jpg", title: "Study Abroad Creative", client: "Superior Consulting", category: "Social", note: "Feed post design and copy" },
-  { src: "/work/post-poster.jpg", title: "Campaign Poster", client: "Superior Consulting", category: "Social", note: "Promotional poster design" },
-  { src: "/work/post-clinic-health.jpg", title: "Women’s Health Services", client: "Homeopathic Clinic", category: "Social", note: "Service post for the clinic’s page" },
-  { src: "/work/post-study-abroad.jpg", title: "Admissions Open", client: "Study Abroad", category: "Social", note: "Enrolment campaign creative" },
-  { src: "/work/case-offer-letter.jpg", title: "Offer Letter — Pakistan to Finland", client: "Superior Consulting", category: "Social", note: "Results post: client admitted to SEAMK, Finland" },
-  { src: "/work/ai-cinematic.jpg", title: "Golden Hour", client: "AI Portrait Series", category: "AI Content", note: "AI-generated editorial portrait" },
-  { src: "/work/ai-beauty.jpg", title: "Beauty Editorial", client: "AI Portrait Series", category: "AI Content", note: "AI-generated beauty visual" },
-  { src: "/work/ai-bridal.jpg", title: "Bridal Editorial", client: "AI Portrait Series", category: "AI Content", note: "AI-generated bridal portrait" },
-  { src: "/work/ai-fashion-man.jpg", title: "Menswear Editorial", client: "AI Portrait Series", category: "AI Content", note: "AI-generated fashion visual" },
-  { src: "/work/pin-bob.jpg", title: "Feathered Choppy Bob", client: "Pinterest — Hair Content", category: "Pinterest", note: "Search-optimised pin design" },
-  { src: "/work/pin-men.jpg", title: "13 Clean Hairstyles for Men", client: "Pinterest — Hair Content", category: "Pinterest", note: "Search-optimised pin design" },
-  { src: "/work/pin-women.jpg", title: "Medium-Length Hairstyles, 30+", client: "Pinterest — Hair Content", category: "Pinterest", note: "Search-optimised pin design" },
-  { src: "/work/pin-wolfcut.jpg", title: "Black & Red Wolf Cut", client: "Pinterest — Hair Content", category: "Pinterest", note: "Search-optimised pin design" },
-  { src: "/work/web-omnifood.jpg", title: "Omnifood", client: "Website Design", category: "Web", note: "Landing page design" },
-  { src: "/work/web-fastcuisine.jpg", title: "FastCuisine", client: "Website Design", category: "Web", note: "Restaurant site design" },
+  { src: "/work/poster-career-connect.jpg", w: 1000, h: 1249, title: "Career Connect ’26", client: "Austrak Immigration", category: "Campaigns", note: "Event poster for UBIT, University of Karachi" },
+  { src: "/work/poster-visa-success.jpg", w: 1000, h: 1500, title: "Skilled Visa Success Story", client: "Austrak Immigration", category: "Campaigns", note: "AI-assisted success-story creative" },
+  { src: "/work/poster-germany.jpg", w: 1000, h: 1099, title: "Germany Opportunity Card", client: "Austrak Immigration", category: "Campaigns", note: "Consultancy campaign poster" },
+  { src: "/work/poster-meet-greet.jpg", w: 1122, h: 1402, title: "Meet & Greet — Study Abroad", client: "Austrak Immigration", category: "Campaigns", note: "Event creative and promotion" },
+  { src: "/work/post-it-1.jpg", w: 1080, h: 1080, title: "Study in Italy", client: "Study Abroad", category: "Social", note: "Social post design" },
+  { src: "/work/post-study.jpg", w: 1080, h: 1350, title: "Study Abroad Creative", client: "Superior Consulting", category: "Social", note: "Feed post design and copy" },
+  { src: "/work/post-poster.jpg", w: 1131, h: 1600, title: "Campaign Poster", client: "Superior Consulting", category: "Social", note: "Promotional poster design" },
+  { src: "/work/post-clinic-health.jpg", w: 1000, h: 1500, title: "Women’s Health Services", client: "Homeopathic Clinic", category: "Social", note: "Service post for the clinic’s page" },
+  { src: "/work/post-study-abroad.jpg", w: 1000, h: 1000, title: "Admissions Open", client: "Study Abroad", category: "Social", note: "Enrolment campaign creative" },
+  { src: "/work/case-offer-letter.jpg", w: 1000, h: 1294, title: "Offer Letter — Pakistan to Finland", client: "Superior Consulting", category: "Social", note: "Results post: client admitted to SEAMK, Finland" },
+  { src: "/work/ai-cinematic.jpg", w: 896, h: 1344, title: "Golden Hour", client: "AI Portrait Series", category: "AI Content", note: "AI-generated editorial portrait" },
+  { src: "/work/ai-beauty.jpg", w: 896, h: 1344, title: "Beauty Editorial", client: "AI Portrait Series", category: "AI Content", note: "AI-generated beauty visual" },
+  { src: "/work/ai-bridal.jpg", w: 896, h: 1344, title: "Bridal Editorial", client: "AI Portrait Series", category: "AI Content", note: "AI-generated bridal portrait" },
+  { src: "/work/ai-fashion-man.jpg", w: 896, h: 1344, title: "Menswear Editorial", client: "AI Portrait Series", category: "AI Content", note: "AI-generated fashion visual" },
+  { src: "/work/pin-bob.jpg", w: 736, h: 1104, title: "Feathered Choppy Bob", client: "Pinterest — Hair Content", category: "Pinterest", note: "Search-optimised pin design" },
+  { src: "/work/pin-men.jpg", w: 736, h: 1104, title: "13 Clean Hairstyles for Men", client: "Pinterest — Hair Content", category: "Pinterest", note: "Search-optimised pin design" },
+  { src: "/work/pin-women.jpg", w: 736, h: 1104, title: "Medium-Length Hairstyles, 30+", client: "Pinterest — Hair Content", category: "Pinterest", note: "Search-optimised pin design" },
+  { src: "/work/pin-wolfcut.jpg", w: 736, h: 1104, title: "Black & Red Wolf Cut", client: "Pinterest — Hair Content", category: "Pinterest", note: "Search-optimised pin design" },
+  { src: "/work/web-omnifood.jpg", w: 272, h: 1600, title: "Omnifood", client: "Website Design", category: "Web", note: "Landing page design" },
+  { src: "/work/web-fastcuisine.jpg", w: 451, h: 1600, title: "FastCuisine", client: "Website Design", category: "Web", note: "Restaurant site design" },
 ];
 
 export const proof = [

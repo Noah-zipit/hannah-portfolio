@@ -16,6 +16,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://prismatic-lily-2df05a.netlify.app"),
   title: "Hannah Iqbal — Digital Marketer | Meta Ads, Short-Form Video & AI Content",
   description:
     "Portfolio of Hannah Iqbal, a Karachi-based digital marketer. 323 study-abroad leads at $0.29 each, 2,213 clinic enquiries at $0.05 each, and Pinterest growth from 3.35M to 8.02M impressions.",

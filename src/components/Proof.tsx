@@ -17,7 +17,7 @@ export default function Proof() {
     <section ref={ref} className="relative overflow-hidden border-y border-line bg-coal py-24">
       <div
         aria-hidden
-        className="text-outline pointer-events-none absolute top-6 left-0 w-full text-center font-display text-[16vw] leading-none font-black whitespace-nowrap select-none"
+        className="text-outline pointer-events-none absolute top-6 left-0 w-full text-center font-display text-[13vw] leading-none font-black whitespace-nowrap select-none"
       >
         RESULTS
       </div>
@@ -40,16 +40,16 @@ export default function Proof() {
                     <span className="font-display text-3xl font-bold text-amber">{p.metric}</span>
                   </div>
                   <p className="mt-2 text-sm leading-relaxed text-sand">{p.detail}</p>
-                  <div className="mt-5 grid grid-cols-2 gap-4">
+                  <div className="mt-5 space-y-5">
                     <figure>
-                      <div className="overflow-hidden rounded-xl border border-line">
-                        <Image src={p.before} alt={`${p.title} dashboard before Hannah's work`} width={520} height={340} className="aspect-[3/2] w-full object-cover object-top" loading="lazy" />
+                      <div className="overflow-hidden rounded-xl border border-line bg-[#f7f2e7] p-1.5">
+                        <Image src={p.before} alt={`${p.title} dashboard before Hannah's work`} width={1000} height={580} className="h-auto w-full rounded-lg" loading="lazy" />
                       </div>
                       <figcaption className="mt-2 text-xs font-semibold tracking-wide text-faint uppercase">Before</figcaption>
                     </figure>
                     <figure>
-                      <div className="overflow-hidden rounded-xl border border-amber/60">
-                        <Image src={p.after} alt={`${p.title} dashboard after Hannah's work`} width={520} height={340} className="aspect-[3/2] w-full object-cover object-top" loading="lazy" />
+                      <div className="overflow-hidden rounded-xl border border-amber/60 bg-[#f7f2e7] p-1.5">
+                        <Image src={p.after} alt={`${p.title} dashboard after Hannah's work`} width={1000} height={580} className="h-auto w-full rounded-lg" loading="lazy" />
                       </div>
                       <figcaption className="mt-2 text-xs font-semibold tracking-wide text-amber uppercase">After</figcaption>
                     </figure>
@@ -70,7 +70,9 @@ export default function Proof() {
           {reports.map((r, i) => (
             <Reveal key={r.src} delay={i * 0.08}>
               <TiltCard max={6}>
-                <Image src={r.src} alt={`${r.title} — ${r.detail}`} width={560} height={380} className="aspect-[3/2] w-full object-cover object-top" loading="lazy" />
+                <div className="bg-[#f7f2e7] p-1.5">
+                  <Image src={r.src} alt={`${r.title} — ${r.detail}`} width={1000} height={420} className="h-auto w-full rounded-lg" loading="lazy" />
+                </div>
                 <div className="p-4">
                   <p className="font-semibold">{r.title}</p>
                   <p className="mt-0.5 text-sm text-amber">{r.detail}</p>

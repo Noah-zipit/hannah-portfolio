@@ -24,7 +24,7 @@ export default function Hero() {
       <motion.div
         aria-hidden
         style={{ y: yWord }}
-        className="text-outline pointer-events-none absolute -top-4 left-0 w-full text-center font-display text-[24vw] leading-none font-black tracking-tight whitespace-nowrap select-none"
+        className="text-outline pointer-events-none absolute -top-4 left-0 w-full text-center font-display text-[18vw] leading-none font-black tracking-tight whitespace-nowrap select-none"
       >
         MARKETER
       </motion.div>
@@ -108,7 +108,7 @@ export default function Hero() {
             <div className="overflow-hidden rounded-2xl border border-line" style={{ transform: "rotate(-5deg)" }}>
               <Image src="/work/ai-cinematic.jpg" alt="AI-generated editorial portrait from Hannah's portrait series" width={480} height={640} className="aspect-[3/4] w-full object-cover" priority />
             </div>
-            <p className="mt-2 text-right text-xs text-faint">AI content direction</p>
+            <p className="mt-2 text-right text-xs font-medium text-sand">AI content direction</p>
           </motion.div>
 
           <motion.div
@@ -121,7 +121,7 @@ export default function Hero() {
             <div className="overflow-hidden rounded-2xl border border-line" style={{ transform: "rotate(4deg)" }}>
               <Image src="/work/poster-career-connect.jpg" alt="Career Connect '26 event poster designed for Austrak Immigration" width={480} height={600} className="aspect-[4/5] w-full object-cover" priority />
             </div>
-            <p className="mt-2 text-xs text-faint">Campaign design — Austrak</p>
+            <p className="mt-2 text-xs font-medium text-sand">Campaign design — Austrak</p>
           </motion.div>
 
           <motion.div

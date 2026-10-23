@@ -186,7 +186,7 @@ function Skills() {
         </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {skillGroups.map((group, i) => (
-            <Reveal key={group.title} delay={i * 0.08}>
+            <Reveal key={group.title} delay={i * 0.08} className="h-full">
               <div className={`h-full rounded-3xl border border-line bg-panel p-7 ${i === 0 ? "md:-translate-y-3" : ""}`}>
                 <h3 className="font-display text-xl font-semibold">{group.title}</h3>
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -229,18 +229,19 @@ function Packages() {
                   : "border border-line bg-coal"
               }`}
             >
-              {pkg.primary && (
+              {pkg.primary ? (
                 <span className="mb-4 self-start rounded-full bg-amber px-3 py-1 text-[11px] font-extrabold tracking-wider text-ink uppercase">
                   Full service
                 </span>
+              ) : (
+                <p className="text-xs font-bold tracking-[0.2em] text-faint uppercase">{pkg.tag}</p>
               )}
-              <p className="text-xs font-bold tracking-[0.2em] text-faint uppercase">{pkg.tag}</p>
-              <h3 className={`mt-1 font-display font-bold ${pkg.primary ? "text-4xl" : "text-3xl"}`}>{pkg.name}</h3>
+              <h3 className={`font-display font-bold ${pkg.primary ? "mt-1 text-4xl" : "mt-1 text-3xl"}`}>{pkg.name}</h3>
               <p className="mt-2 text-sm text-sand italic">{pkg.line}</p>
-              <p className="mt-6">
-                <span className="text-sm font-semibold text-faint">PKR </span>
-                <span className={`font-display font-black ${pkg.primary ? "text-5xl text-amber" : "text-4xl"}`}>{pkg.price}</span>
-                <span className="text-sm text-faint"> /month</span>
+              <p className="mt-6 flex flex-wrap items-baseline gap-x-1.5 whitespace-nowrap">
+                <span className="text-sm font-semibold text-faint">PKR</span>
+                <span className={`font-display text-4xl font-black ${pkg.primary ? "text-amber" : ""}`}>{pkg.price}</span>
+                <span className="text-sm text-faint">/month</span>
               </p>
               <ul className="mt-6 flex-1 space-y-2.5">
                 {pkg.features.map((f) => (
