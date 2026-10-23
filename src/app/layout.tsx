@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 import { seo } from "@/data/content";
-import Script from "next/script";
-import IdentityRedirect from "@/components/IdentityRedirect";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -35,11 +33,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${manrope.variable}`}>
-      <body>
-        {children}
-        <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" strategy="afterInteractive" />
-        <IdentityRedirect />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

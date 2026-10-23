@@ -274,16 +274,6 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 // ---------- main admin ----------
-type IdentityUser = { email: string; jwt: () => Promise<string> };
-type IdentityWidget = {
-  init: (opts?: Record<string, unknown>) => void;
-  on: (ev: string, cb: (u?: unknown) => void) => void;
-  open: () => void;
-  close: () => void;
-  currentUser: () => IdentityUser | null;
-  logout: () => void;
-};
-
 const TABS = [
   { id: "profile", label: "Profile & About text" },
   { id: "seo", label: "Search & sharing (SEO)" },
@@ -300,9 +290,13 @@ const TABS = [
   { id: "contact", label: "Contact & footer" },
 ] as const;
 
+const TOKEN_KEY = "hannah-cms-token";
+
 export default function Admin() {
-  const [user, setUser] = useState<IdentityUser | null>(null);
-  const [widgetReady, setWidgetReady] = useState(false);
+  const [token, setToken] = useState<string | null>(null);
+  const [password, setPassword] = useState("");
+  const [loginError, setLoginError] = useState("");
+  const [loggingIn, setLoggingIn] = useState(false);
   const [content, setContent] = useState<any>(null);
   const [sha, setSha] = useState("");
   const [snapshot, setSnapshot] = useState("");
@@ -310,44 +304,50 @@ export default function Admin() {
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
   const [publishing, setPublishing] = useState(false);
-  const widgetRef = useRef<IdentityWidget | null>(null);
 
-  // Load the Netlify Identity widget (same script the layout loads).
   useEffect(() => {
-    let tries = 0;
-    const timer = setInterval(() => {
-      tries += 1;
-      const w = (window as any).netlifyIdentity as IdentityWidget | undefined;
-      if (w) {
-        clearInterval(timer);
-        widgetRef.current = w;
-        w.init();
-        const u = w.currentUser();
-        if (u) setUser(u as IdentityUser);
-        w.on("login", (usr) => {
-          setUser(usr as IdentityUser);
-          w.close();
-        });
-        w.on("logout", () => setUser(null));
-        setWidgetReady(true);
-      } else if (tries > 60) clearInterval(timer);
-    }, 200);
-    return () => clearInterval(timer);
+    setToken(localStorage.getItem(TOKEN_KEY));
   }, []);
 
   const api = useCallback<ApiFn>(async (action, extra = {}) => {
-    const u = widgetRef.current?.currentUser();
-    if (!u) throw new Error("Not logged in.");
-    const token = await u.jwt();
+    const t = localStorage.getItem(TOKEN_KEY);
     const res = await fetch("/.netlify/functions/cms", {
       method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+      headers: { "Content-Type": "application/json", ...(t ? { Authorization: `Bearer ${t}` } : {}) },
       body: JSON.stringify({ action, ...extra }),
     });
     const data = await res.json().catch(() => ({}));
+    if (res.status === 401 && action !== "login") {
+      localStorage.removeItem(TOKEN_KEY);
+      setToken(null);
+      setContent(null);
+      throw new Error("Your session expired — please log in again.");
+    }
     if (!res.ok) throw new Error(data.error || `Request failed (${res.status})`);
     return data;
   }, []);
+
+  const login = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoggingIn(true);
+    setLoginError("");
+    try {
+      const res = await api("login", { password });
+      localStorage.setItem(TOKEN_KEY, res.token);
+      setToken(res.token);
+      setPassword("");
+    } catch (err) {
+      setLoginError(err instanceof Error ? err.message : "Login failed.");
+    } finally {
+      setLoggingIn(false);
+    }
+  };
+
+  const logout = () => {
+    localStorage.removeItem(TOKEN_KEY);
+    setToken(null);
+    setContent(null);
+  };
 
   const load = useCallback(async () => {
     setError("");
@@ -365,8 +365,8 @@ export default function Admin() {
   }, [api]);
 
   useEffect(() => {
-    if (user && !content) load();
-  }, [user, content, load]);
+    if (token && !content) load();
+  }, [token, content, load]);
 
   const set = (path: string) => (v: any) => setContent((c: any) => setPath(c, path, v));
   const g = (path: string) => getPath(content, path);
@@ -382,7 +382,7 @@ export default function Admin() {
       setSnapshot(JSON.stringify(content));
       setStatus("Published ✓ — the site rebuilds itself and goes live in about a minute.");
     } catch (e) {
-      setError((e instanceof Error ? e.message : "Publish failed.") + " If someone else edited recently, use “Reload latest” and re-apply your change.");
+      setError((e instanceof Error ? e.message : "Publish failed.") + " If the content changed elsewhere, use “Reload latest” and re-apply your change.");
       setStatus("");
     } finally {
       setPublishing(false);
@@ -390,26 +390,32 @@ export default function Admin() {
   };
 
   // ---------- login screen ----------
-  if (!user) {
+  if (!token) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-ink px-6 text-cream">
-        <div className="w-full max-w-md rounded-3xl border border-line bg-coal p-8 text-center">
+        <form onSubmit={login} className="w-full max-w-md rounded-3xl border border-line bg-coal p-8 text-center">
           <p className="font-display text-3xl font-black">Hannah<span className="text-rose">.</span> <span className="text-lg font-bold text-sand">admin</span></p>
           <p className="mt-3 text-sm leading-relaxed text-sand">
-            This is where you edit everything on your portfolio — words, numbers, pictures, prices. Log in with the
-            email that received the invitation.
+            This is where you edit everything on your portfolio — words, numbers, pictures, prices. Enter the admin password to continue.
           </p>
+          <input
+            type="password"
+            autoComplete="current-password"
+            className={`${inputCls} mt-6 text-center`}
+            placeholder="Admin password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {loginError && <p className="mt-3 rounded-xl border border-cherry bg-maroon/40 px-4 py-2 text-sm">{loginError}</p>}
           <button
-            type="button"
-            disabled={!widgetReady}
-            className="mt-6 w-full rounded-full bg-cherry py-3.5 text-sm font-bold text-cream transition-transform hover:scale-[1.02] active:scale-95 disabled:opacity-50"
-            onClick={() => widgetRef.current?.open()}
+            type="submit"
+            disabled={loggingIn || !password}
+            className="mt-4 w-full rounded-full bg-cherry py-3.5 text-sm font-bold text-cream transition-transform hover:scale-[1.02] active:scale-95 disabled:opacity-50"
           >
-            {widgetReady ? "Log in" : "Loading login…"}
+            {loggingIn ? "Checking…" : "Log in"}
           </button>
-          <p className="mt-4 text-xs text-faint">Forgot your password? The login box has a recovery link.</p>
           <a href="/" className="mt-6 inline-block text-sm font-semibold text-rose">← Back to the site</a>
-        </div>
+        </form>
       </main>
     );
   }
@@ -434,9 +440,8 @@ export default function Admin() {
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-4">
           <p className="font-display text-xl font-black">Hannah<span className="text-rose">.</span> <span className="text-sm font-bold text-sand">admin</span></p>
           <div className="flex items-center gap-4 text-sm">
-            <span className="hidden text-faint sm:inline">{user.email}</span>
             <a href="/" target="_blank" className="font-semibold text-rose">View site ↗</a>
-            <button type="button" className="rounded-full border border-line px-4 py-1.5 font-bold text-sand hover:border-cherry hover:text-cream" onClick={() => widgetRef.current?.logout()}>Log out</button>
+            <button type="button" className="rounded-full border border-line px-4 py-1.5 font-bold text-sand hover:border-cherry hover:text-cream" onClick={logout}>Log out</button>
           </div>
         </div>
         <nav className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-6 pb-3">
