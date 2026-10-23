@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import Work from "@/components/Work";
+import Stories from "@/components/Stories";
 import Proof from "@/components/Proof";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
@@ -318,6 +319,7 @@ export default function Home() {
       <Hero />
       <Marquee />
       <Stats />
+      <Stories />
       <About />
       <Work />
       <div id="results">

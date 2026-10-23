@@ -29,8 +29,8 @@ export default function Hero() {
         MARKETER
       </motion.div>
 
-      {/* flat amber disc, solid colour shape */}
-      <div aria-hidden className="absolute top-24 right-[8%] hidden h-72 w-72 rounded-full bg-cherry/15 lg:block" />
+      {/* pool of cherry light behind the hero pieces */}
+      <div aria-hidden className="absolute top-10 right-[2%] hidden h-[480px] w-[560px] lg:block" style={{ background: "radial-gradient(ellipse at 60% 30%, rgba(129,1,0,0.32), transparent 65%)" }} />
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-12">
         <motion.div style={{ y: yText }} className="lg:col-span-7">
