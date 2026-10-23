@@ -242,7 +242,7 @@ function Packages() {
                 <p className="mt-2 text-sm text-sand italic">{pkg.line}</p>
               </div>
               <p className="mt-6 flex flex-nowrap items-baseline gap-x-1.5">
-                <span className="text-sm font-semibold whitespace-nowrap text-faint">PKR</span>
+                <span className="text-sm font-extrabold whitespace-nowrap text-rose">PKR</span>
                 <span className={`font-display text-4xl font-black whitespace-nowrap ${pkg.primary ? "text-rose" : ""}`}>{pkg.price}</span>
                 <span className="text-sm whitespace-nowrap text-faint">/month</span>
               </p>
