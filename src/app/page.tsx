@@ -229,19 +229,21 @@ function Packages() {
                   : "border border-line bg-coal"
               }`}
             >
-              {pkg.primary ? (
-                <span className="mb-4 self-start rounded-full bg-cherry px-3 py-1 text-[11px] font-extrabold tracking-wider text-cream uppercase">
-                  Full service
-                </span>
-              ) : (
-                <p className="text-xs font-bold tracking-[0.2em] text-faint uppercase">{pkg.tag}</p>
-              )}
-              <h3 className={`font-display font-bold ${pkg.primary ? "mt-1 text-4xl" : "mt-1 text-3xl"}`}>{pkg.name}</h3>
-              <p className="mt-2 text-sm text-sand italic">{pkg.line}</p>
-              <p className="mt-6 flex flex-wrap items-baseline gap-x-1.5 whitespace-nowrap">
-                <span className="text-sm font-semibold text-faint">PKR</span>
-                <span className={`font-display text-4xl font-black ${pkg.primary ? "text-rose" : ""}`}>{pkg.price}</span>
-                <span className="text-sm text-faint">/month</span>
+              <div className="min-h-[118px]">
+                {pkg.primary ? (
+                  <span className="mb-4 inline-block rounded-full bg-cherry px-3 py-1 text-[11px] font-extrabold tracking-wider text-cream uppercase">
+                    Full service
+                  </span>
+                ) : (
+                  <p className="text-xs font-bold tracking-[0.2em] text-faint uppercase">{pkg.tag}</p>
+                )}
+                <h3 className={`font-display font-bold ${pkg.primary ? "mt-1 text-4xl" : "mt-1 text-3xl"}`}>{pkg.name}</h3>
+                <p className="mt-2 text-sm text-sand italic">{pkg.line}</p>
+              </div>
+              <p className="mt-6 flex flex-nowrap items-baseline gap-x-1.5">
+                <span className="text-sm font-semibold whitespace-nowrap text-faint">PKR</span>
+                <span className={`font-display text-4xl font-black whitespace-nowrap ${pkg.primary ? "text-rose" : ""}`}>{pkg.price}</span>
+                <span className="text-sm whitespace-nowrap text-faint">/month</span>
               </p>
               <ul className="mt-6 flex-1 space-y-2.5">
                 {pkg.features.map((f) => (
