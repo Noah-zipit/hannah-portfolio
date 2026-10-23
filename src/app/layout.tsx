@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
+import { seo } from "@/data/content";
+import Script from "next/script";
+import IdentityRedirect from "@/components/IdentityRedirect";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -17,15 +20,13 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hannahiqbal.netlify.app"),
-  title: "Hannah Iqbal — Digital Marketer | Meta Ads, Short-Form Video & AI Content",
-  description:
-    "Portfolio of Hannah Iqbal, a Karachi-based digital marketer. 323 study-abroad leads at $0.29 each, 2,213 clinic enquiries at $0.05 each, and Pinterest growth from 3.35M to 8.02M impressions.",
+  title: seo.title,
+  description: seo.description,
   openGraph: {
-    title: "Hannah Iqbal — Digital Marketer",
-    description:
-      "Meta Ads, short-form video and AI content that turn small budgets into real enquiries. Based in Karachi, working worldwide.",
+    title: seo.ogTitle,
+    description: seo.ogDescription,
     type: "website",
-    images: ["/work/ai-cinematic.jpg"],
+    images: [seo.ogImage],
   },
 };
 
@@ -34,7 +35,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${manrope.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" strategy="afterInteractive" />
+        <IdentityRedirect />
+      </body>
     </html>
   );
 }

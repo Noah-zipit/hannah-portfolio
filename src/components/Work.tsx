@@ -5,12 +5,12 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import TiltCard from "./TiltCard";
 import Reveal from "./Reveal";
-import { work, type WorkItem } from "@/data/content";
+import { work, type WorkItem , workSection } from "@/data/content";
 
-const filters = ["All", "Campaigns", "Social", "AI Content", "Pinterest", "Web"] as const;
+const filters = ["All", ...Array.from(new Set(work.map((w) => w.category)))] as const;
 
 export default function Work() {
-  const [active, setActive] = useState<(typeof filters)[number]>("All");
+  const [active, setActive] = useState<string>("All");
   const shown: WorkItem[] = active === "All" ? work : work.filter((w) => w.category === active);
 
   return (
@@ -18,12 +18,12 @@ export default function Work() {
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[420px]" style={{ background: "radial-gradient(ellipse 70% 100% at 50% 0%, rgba(237,235,221,0.07), transparent 70%)" }} />
       <div className="relative mx-auto max-w-7xl px-6 py-24">
       <Reveal>
-        <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">The Gallery</p>
+        <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">{workSection.eyebrow}</p>
         <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-          Works on the <span className="italic">wall</span>
+          {workSection.headingLead} <span className="italic">{workSection.headingAccent}</span>
         </h2>
         <p className="mt-4 max-w-2xl text-sand">
-          Every piece below ran on a live client account. The room is dark on purpose — hover a piece and the light finds it.
+          {workSection.sub}
         </p>
       </Reveal>
 

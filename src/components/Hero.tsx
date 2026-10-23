@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { profile } from "@/data/content";
+import { profile, hero } from "@/data/content";
 
 const ease = [0.22, 0.8, 0.24, 1] as const;
 
@@ -51,7 +51,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.03, ease }}
             >
-              Hannah
+              {profile.firstName}
             </motion.span>
             <motion.span
               className="block text-rose italic"
@@ -59,7 +59,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1, ease }}
             >
-              Iqbal
+              {profile.lastName}
             </motion.span>
           </h1>
 
@@ -69,9 +69,7 @@ export default function Hero() {
             transition={{ duration: 0.45, delay: 0.18, ease }}
             className="mt-7 max-w-xl text-lg leading-relaxed text-sand"
           >
-            I turn small ad budgets into real enquiries — <strong className="text-cream">323 leads at $0.29 each</strong> for a
-            study-abroad consultancy, <strong className="text-cream">2,213 clinic conversations at $0.05 each</strong>, and a
-            Pinterest account grown from 3.35M to 8.02M impressions.
+            {hero.introLead}<strong className="text-cream">{hero.introBold1}</strong>{hero.introMiddle}<strong className="text-cream">{hero.introBold2}</strong>{hero.introTail}
           </motion.p>
 
           <motion.div
@@ -81,18 +79,18 @@ export default function Hero() {
             className="mt-9 flex flex-wrap items-center gap-4"
           >
             <a
-              href="#work"
+              href={hero.primaryCta.href}
               className="rounded-full bg-cherry px-7 py-3 text-sm font-bold text-cream transition-transform duration-300 hover:scale-[1.04] active:scale-95"
             >
-              See the work
+              {hero.primaryCta.label}
             </a>
             <a
-              href="#contact"
+              href={hero.secondaryCta.href}
               className="rounded-full border border-line px-7 py-3 text-sm font-bold text-cream transition-colors duration-300 hover:border-cherry hover:text-rose"
             >
-              Work with me
+              {hero.secondaryCta.label}
             </a>
-            <span className="text-sm text-faint">{profile.location} · Working worldwide</span>
+            <span className="text-sm text-faint">{profile.location} · {profile.locationNote}</span>
           </motion.div>
         </motion.div>
 
@@ -106,9 +104,9 @@ export default function Hero() {
             transition={{ duration: 0.55, delay: 0.15, ease }}
           >
             <div className="overflow-hidden rounded-2xl border border-line" style={{ transform: "rotate(-5deg)" }}>
-              <Image src="/work/ai-cinematic.jpg" alt="AI-generated editorial portrait from Hannah's portrait series" width={480} height={640} className="aspect-[3/4] w-full object-cover" priority />
+              <Image src={hero.imageA.src} alt={hero.imageA.alt} width={480} height={640} className="aspect-[3/4] w-full object-cover" priority />
             </div>
-            <p className="mt-2 text-right text-xs font-medium text-sand">AI content direction</p>
+            <p className="mt-2 text-right text-xs font-medium text-sand">{hero.imageA.caption}</p>
           </motion.div>
 
           <motion.div
@@ -119,9 +117,9 @@ export default function Hero() {
             transition={{ duration: 0.55, delay: 0.24, ease }}
           >
             <div className="overflow-hidden rounded-2xl border border-line" style={{ transform: "rotate(4deg)" }}>
-              <Image src="/work/poster-career-connect.jpg" alt="Career Connect '26 event poster designed for Austrak Immigration" width={480} height={600} className="aspect-[4/5] w-full object-cover" priority />
+              <Image src={hero.imageB.src} alt={hero.imageB.alt} width={480} height={600} className="aspect-[4/5] w-full object-cover" priority />
             </div>
-            <p className="mt-2 text-xs font-medium text-sand">Campaign design — Austrak</p>
+            <p className="mt-2 text-xs font-medium text-sand">{hero.imageB.caption}</p>
           </motion.div>
 
           <motion.div
@@ -132,8 +130,8 @@ export default function Hero() {
             transition={{ duration: 0.55, delay: 0.32, ease }}
           >
             <div className="rounded-2xl border border-cherry/50 bg-panel p-4">
-              <p className="font-display text-3xl font-bold text-rose">$0.05</p>
-              <p className="mt-1 text-xs leading-snug text-sand">per clinic enquiry, across 2,213 conversations</p>
+              <p className="font-display text-3xl font-bold text-rose">{hero.statCard.value}</p>
+              <p className="mt-1 text-xs leading-snug text-sand">{hero.statCard.text}</p>
             </div>
           </motion.div>
         </div>

@@ -6,23 +6,22 @@ import Proof from "@/components/Proof";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import TiltCard from "@/components/TiltCard";
-import { profile, stats, roles, skillGroups, packages, marqueeItems } from "@/data/content";
+import { profile, stats, statsExtra, statsHeroNote, roles, skillGroups, packages, packagesSection, marqueeItems, navContent, aboutSection, experienceSection, skillsSection, contactSection } from "@/data/content";
 
 function Nav() {
   return (
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-line/60 bg-ink/90 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#top" className="font-display text-xl font-bold tracking-tight">
-          Hannah<span className="text-rose">.</span>
+          {profile.firstName}<span className="text-rose">.</span>
         </a>
         <div className="hidden items-center gap-8 text-sm font-semibold text-sand md:flex">
-          <a href="#work" className="transition-colors hover:text-rose">Work</a>
-          <a href="#results" className="transition-colors hover:text-rose">Results</a>
-          <a href="#experience" className="transition-colors hover:text-rose">Experience</a>
-          <a href="#packages" className="transition-colors hover:text-rose">Packages</a>
+          {navContent.links.map((l) => (
+            <a key={l.href} href={l.href} className="transition-colors hover:text-rose">{l.label}</a>
+          ))}
         </div>
-        <a href="#contact" className="rounded-full bg-cherry px-5 py-2 text-sm font-bold text-cream transition-transform duration-300 hover:scale-105 active:scale-95">
-          Hire me
+        <a href={navContent.ctaHref} className="rounded-full bg-cherry px-5 py-2 text-sm font-bold text-cream transition-transform duration-300 hover:scale-105 active:scale-95">
+          {navContent.ctaLabel}
         </a>
       </div>
     </nav>
@@ -56,7 +55,7 @@ function Stats() {
             <Counter value={hero.value} />
           </p>
           <p className="mt-3 text-xl font-bold">{hero.label}</p>
-          <p className="mt-1 max-w-xs text-sand">{hero.sub} — at roughly five US cents each.</p>
+          <p className="mt-1 max-w-xs text-sand">{hero.sub} {statsHeroNote}</p>
         </Reveal>
         <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:col-span-8">
           {rest.map((s, i) => (
@@ -69,9 +68,9 @@ function Stats() {
             </Reveal>
           ))}
           <Reveal delay={0.3}>
-            <p className="font-display text-4xl font-bold sm:text-5xl">324K</p>
-            <p className="mt-2 font-bold">Pinterest engagements</p>
-            <p className="mt-1 text-sm text-faint">Up from 134K in a single month</p>
+            <p className="font-display text-4xl font-bold sm:text-5xl">{statsExtra.value}</p>
+            <p className="mt-2 font-bold">{statsExtra.label}</p>
+            <p className="mt-1 text-sm text-faint">{statsExtra.sub}</p>
           </Reveal>
         </div>
       </div>
@@ -86,24 +85,24 @@ function About() {
         <Reveal className="lg:col-span-5">
           <TiltCard max={6}>
             <Image
-              src="/work/poster-meet-greet.jpg"
-              alt="Meet and greet study-abroad event creative designed by Hannah Iqbal"
+              src={aboutSection.image}
+              alt={aboutSection.imageAlt}
               width={720}
               height={560}
               className="aspect-[5/4] w-full object-cover"
               loading="lazy"
             />
             <div className="p-5">
-              <p className="font-display text-lg font-semibold">Design + media, one pair of hands</p>
-              <p className="mt-1 text-sm text-sand">Company profiles, campaign posters and event creative — designed, written and posted by Hannah.</p>
+              <p className="font-display text-lg font-semibold">{aboutSection.cardTitle}</p>
+              <p className="mt-1 text-sm text-sand">{aboutSection.cardText}</p>
             </div>
           </TiltCard>
         </Reveal>
         <div className="lg:col-span-7">
           <Reveal>
-            <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">About</p>
+            <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">{aboutSection.eyebrow}</p>
             <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-              Marketing that answers to <span className="italic">the spreadsheet</span>
+              {aboutSection.headingLead} <span className="italic">{aboutSection.headingAccent}</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
@@ -112,17 +111,12 @@ function About() {
           <Reveal delay={0.18}>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-2xl border border-line bg-coal p-5">
-                <p className="font-bold text-rose">Currently</p>
-                <p className="mt-1.5 text-sm leading-relaxed text-sand">
-                  Digital Marketing Manager at Austrak Immigration, Meta Ads Manager for a homeopathic clinic, and HR &
-                  Internship Coordinator at Artimization.
-                </p>
+                <p className="font-bold text-rose">{aboutSection.currentlyTitle}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-sand">{aboutSection.currentlyText}</p>
               </div>
               <div className="rounded-2xl border border-line bg-coal p-5">
-                <p className="font-bold text-rose">Education & languages</p>
-                <p className="mt-1.5 text-sm leading-relaxed text-sand">
-                  BBA in progress at Virtual University of Pakistan. Urdu & Punjabi native; English, Hindi and basic Spanish.
-                </p>
+                <p className="font-bold text-rose">{aboutSection.educationTitle}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-sand">{aboutSection.educationText}</p>
               </div>
             </div>
           </Reveal>
@@ -136,9 +130,9 @@ function Experience() {
   return (
     <section id="experience" className="mx-auto max-w-7xl px-6 py-24">
       <Reveal>
-        <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">Experience</p>
+        <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">{experienceSection.eyebrow}</p>
         <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-          Where the numbers <span className="italic">came from</span>
+          {experienceSection.headingLead} <span className="italic">{experienceSection.headingAccent}</span>
         </h2>
       </Reveal>
 
@@ -180,9 +174,9 @@ function Skills() {
     <section className="border-y border-line bg-coal py-24">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
-          <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">Toolkit</p>
+          <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">{skillsSection.eyebrow}</p>
           <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-            Skills & <span className="italic">tools</span>
+            {skillsSection.headingLead} <span className="italic">{skillsSection.headingAccent}</span>
           </h2>
         </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -210,13 +204,12 @@ function Packages() {
   return (
     <section id="packages" className="mx-auto max-w-7xl px-6 py-24">
       <Reveal>
-        <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">HeavenLabs — Creator Growth</p>
+        <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">{packagesSection.eyebrow}</p>
         <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-          Grow steady. <span className="italic">Earn lasting.</span>
+          {packagesSection.headingLead} <span className="italic">{packagesSection.headingAccent}</span>
         </h2>
         <p className="mt-4 max-w-2xl text-sand">
-          Content, management and paid growth for creators. Start where you are and move up whenever you are ready. Ad
-          budgets are paid separately, directly to the platform.
+          {packagesSection.intro}
         </p>
       </Reveal>
 
@@ -242,9 +235,9 @@ function Packages() {
                 <p className="mt-2 text-sm text-sand italic">{pkg.line}</p>
               </div>
               <p className="mt-6 flex flex-nowrap items-baseline gap-x-1.5">
-                <span className="text-sm font-extrabold whitespace-nowrap text-rose">PKR</span>
+                <span className="text-sm font-extrabold whitespace-nowrap text-rose">{packagesSection.currency}</span>
                 <span className={`font-display text-4xl font-black whitespace-nowrap ${pkg.primary ? "text-rose" : ""}`}>{pkg.price}</span>
-                <span className="text-sm whitespace-nowrap text-faint">/month</span>
+                <span className="text-sm whitespace-nowrap text-faint">{packagesSection.perLabel}</span>
               </p>
               <ul className="mt-6 flex-1 space-y-2.5">
                 {pkg.features.map((f) => (
@@ -260,7 +253,7 @@ function Packages() {
                   pkg.primary ? "bg-cherry text-cream" : "border border-line text-cream hover:border-cherry hover:text-rose"
                 }`}
               >
-                Start with {pkg.name}
+                {packagesSection.ctaPrefix} {pkg.name}
               </a>
             </div>
           </Reveal>
@@ -268,8 +261,7 @@ function Packages() {
       </div>
       <Reveal delay={0.1}>
         <p className="mt-8 text-sm text-faint">
-          Packages renew monthly and can be cancelled with 14 days’ notice. Every piece of content is shared with you before
-          it goes live.
+          {packagesSection.footnote}
         </p>
       </Reveal>
     </section>
@@ -281,12 +273,12 @@ function Contact() {
     <footer id="contact" className="grain relative overflow-hidden border-t border-line bg-coal">
       <div className="relative mx-auto max-w-7xl px-6 py-24 text-center">
         <Reveal>
-          <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">Get in touch</p>
+          <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">{contactSection.eyebrow}</p>
           <h2 className="mx-auto mt-4 max-w-3xl font-display text-5xl leading-tight font-bold tracking-tight sm:text-6xl">
-            Let’s grow <span className="text-rose italic">something.</span>
+            {contactSection.headingLead} <span className="text-rose italic">{contactSection.headingAccent}</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-sand">
-            For roles, freelance campaigns or creator growth packages — the fastest reply is email or WhatsApp.
+            {contactSection.text}
           </p>
         </Reveal>
         <Reveal delay={0.12}>
@@ -298,13 +290,13 @@ function Contact() {
               {profile.phone}
             </a>
             <a href={profile.linkedin} target="_blank" rel="noreferrer" className="rounded-full border border-line px-7 py-3.5 text-sm font-bold transition-colors hover:border-cherry hover:text-rose">
-              LinkedIn
+              {contactSection.linkedinLabel}
             </a>
           </div>
         </Reveal>
         <Reveal delay={0.2}>
           <p className="mt-16 text-sm text-faint">
-            © 2026 Hannah Iqbal · Karachi, Pakistan · Portfolio built from live campaign work
+            {contactSection.footerLine}
           </p>
         </Reveal>
       </div>

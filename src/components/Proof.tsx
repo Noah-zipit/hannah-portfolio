@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Reveal from "./Reveal";
 import TiltCard from "./TiltCard";
-import { proof, reports } from "@/data/content";
+import { proof, reports, proofSection } from "@/data/content";
 
 export default function Proof() {
   const ref = useRef<HTMLElement>(null);
@@ -24,9 +24,9 @@ export default function Proof() {
 
       <div className="relative mx-auto max-w-7xl px-6">
         <Reveal>
-          <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">Proof, not promises</p>
+          <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">{proofSection.eyebrow}</p>
           <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-            Before → <span className="italic">after</span>
+            {proofSection.headingLead} <span className="italic">{proofSection.headingAccent}</span>
           </h2>
         </Reveal>
 
@@ -45,13 +45,13 @@ export default function Proof() {
                       <div className="overflow-hidden rounded-xl border border-line bg-[#f7f2e7] p-1.5">
                         <Image src={p.before} alt={`${p.title} dashboard before Hannah's work`} width={1000} height={580} className="h-auto w-full rounded-lg" loading="lazy" />
                       </div>
-                      <figcaption className="mt-2 text-xs font-semibold tracking-wide text-faint uppercase">Before</figcaption>
+                      <figcaption className="mt-2 text-xs font-semibold tracking-wide text-faint uppercase">{proofSection.beforeLabel}</figcaption>
                     </figure>
                     <figure>
                       <div className="overflow-hidden rounded-xl border border-cherry/60 bg-[#f7f2e7] p-1.5">
                         <Image src={p.after} alt={`${p.title} dashboard after Hannah's work`} width={1000} height={580} className="h-auto w-full rounded-lg" loading="lazy" />
                       </div>
-                      <figcaption className="mt-2 text-xs font-semibold tracking-wide text-rose uppercase">After</figcaption>
+                      <figcaption className="mt-2 text-xs font-semibold tracking-wide text-rose uppercase">{proofSection.afterLabel}</figcaption>
                     </figure>
                   </div>
                 </div>
@@ -61,9 +61,9 @@ export default function Proof() {
         </div>
 
         <Reveal delay={0.15}>
-          <h3 className="mt-16 font-display text-2xl font-semibold">From the Ads Manager</h3>
+          <h3 className="mt-16 font-display text-2xl font-semibold">{proofSection.reportsHeading}</h3>
           <p className="mt-2 max-w-2xl text-sm text-sand">
-            Campaign reports from live accounts — the spreadsheets behind the headline numbers.
+            {proofSection.reportsSub}
           </p>
         </Reveal>
         <div className="mt-7 grid gap-6 sm:grid-cols-3">
