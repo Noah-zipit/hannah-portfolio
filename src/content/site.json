@@ -4,7 +4,7 @@
     "description": "Portfolio of Hannah Iqbal, a Karachi-based digital marketer. 323 study-abroad leads at $0.29 each, 2,213 clinic enquiries at $0.05 each, and Pinterest growth from 3.35M to 8.02M impressions.",
     "ogTitle": "Hannah Iqbal — Digital Marketer",
     "ogDescription": "Meta Ads, short-form video and AI content that turn small budgets into real enquiries. Based in Karachi, working worldwide.",
-    "ogImage": "/work/ai-cinematic.jpg"
+    "ogImage": "/work/adcampaignreport.png"
   },
   "profile": {
     "name": "Hannah Iqbal",
@@ -22,10 +22,22 @@
   },
   "nav": {
     "links": [
-      { "label": "Work", "href": "#work" },
-      { "label": "Results", "href": "#results" },
-      { "label": "Experience", "href": "#experience" },
-      { "label": "Packages", "href": "#packages" }
+      {
+        "label": "Work",
+        "href": "#work"
+      },
+      {
+        "label": "Results",
+        "href": "#results"
+      },
+      {
+        "label": "Experience",
+        "href": "#experience"
+      },
+      {
+        "label": "Packages",
+        "href": "#packages"
+      }
     ],
     "ctaLabel": "Hire me",
     "ctaHref": "#contact"
@@ -37,23 +49,88 @@
     "introMiddle": " for a study-abroad consultancy, ",
     "introBold2": "2,213 clinic conversations at $0.05 each",
     "introTail": ", and a Pinterest account grown from 3.35M to 8.02M impressions.",
-    "primaryCta": { "label": "See the work", "href": "#work" },
-    "secondaryCta": { "label": "Work with me", "href": "#contact" },
-    "imageA": { "src": "/work/ai-cinematic.jpg", "alt": "AI-generated editorial portrait from Hannah's portrait series", "caption": "AI content direction" },
-    "imageB": { "src": "/work/poster-career-connect.jpg", "alt": "Career Connect '26 event poster designed for Austrak Immigration", "caption": "Campaign design — Austrak" },
-    "statCard": { "value": "$0.05", "text": "per clinic enquiry, across 2,213 conversations" }
+    "primaryCta": {
+      "label": "See the work",
+      "href": "#work"
+    },
+    "secondaryCta": {
+      "label": "Work with me",
+      "href": "#contact"
+    },
+    "imageA": {
+      "src": "/work/pin-growth-after.jpg",
+      "alt": "AI-generated editorial portrait from Hannah's portrait series",
+      "caption": "AI content direction"
+    },
+    "imageB": {
+      "src": "/work/poster-career-connect.jpg",
+      "alt": "Career Connect '26 event poster designed for Austrak Immigration",
+      "caption": "Campaign design — Austrak"
+    },
+    "statCard": {
+      "value": "$0.05",
+      "text": "per clinic enquiry, across 2,213 conversations"
+    }
   },
-  "marquee": ["Meta Ads", "Short-Form Video", "AI Content", "Pinterest SEO", "Lead Generation", "Content Calendars", "Copywriting", "Creator Management", "B2B Outreach", "YouTube SEO"],
+  "marquee": [
+    "Meta Ads",
+    "Short-Form Video",
+    "AI Content",
+    "Pinterest SEO",
+    "Lead Generation",
+    "Content Calendars",
+    "Copywriting",
+    "Creator Management",
+    "B2B Outreach",
+    "YouTube SEO"
+  ],
   "stats": {
     "heroNote": "— at roughly five US cents each.",
-    "extra": { "value": "324K", "label": "Pinterest engagements", "sub": "Up from 134K in a single month" },
+    "extra": {
+      "value": "324K",
+      "label": "Pinterest engagements",
+      "sub": "Up from 134K in a single month"
+    },
     "items": [
-      { "value": 2213, "label": "Messaging enquiries", "sub": "Homeopathic clinic campaigns, Mar–Sep 2026", "hero": true },
-      { "value": 0.05, "decimals": 2, "prefix": "$", "label": "Cost per enquiry", "sub": "Rs14 average across two Meta campaigns" },
-      { "value": 323, "label": "Study-abroad leads", "sub": "Three Meta campaigns in a single month" },
-      { "value": 0.29, "decimals": 2, "prefix": "$", "label": "Cost per lead", "sub": "Rs81 average on Rs26,285 spend" },
-      { "value": 8.02, "decimals": 2, "suffix": "M", "label": "Pinterest impressions", "sub": "Up from 3.35M — a 139% jump in one month" },
-      { "value": 58.1, "decimals": 1, "suffix": "K", "label": "YouTube views in 90 days", "sub": "SEO-led growth on a family-run channel" }
+      {
+        "value": 2213,
+        "label": "Messaging enquiries",
+        "sub": "Homeopathic clinic campaigns, Mar–Sep 2026",
+        "hero": true
+      },
+      {
+        "value": 0.05,
+        "decimals": 2,
+        "prefix": "$",
+        "label": "Cost per enquiry",
+        "sub": "Rs14 average across two Meta campaigns"
+      },
+      {
+        "value": 323,
+        "label": "Study-abroad leads",
+        "sub": "Three Meta campaigns in a single month"
+      },
+      {
+        "value": 0.29,
+        "decimals": 2,
+        "prefix": "$",
+        "label": "Cost per lead",
+        "sub": "Rs81 average on Rs26,285 spend"
+      },
+      {
+        "value": 8.02,
+        "decimals": 2,
+        "suffix": "M",
+        "label": "Pinterest impressions",
+        "sub": "Up from 3.35M — a 139% jump in one month"
+      },
+      {
+        "value": 58.1,
+        "decimals": 1,
+        "suffix": "K",
+        "label": "YouTube views in 90 days",
+        "sub": "SEO-led growth on a family-run channel"
+      }
     ]
   },
   "stories": {
@@ -117,26 +194,186 @@
     "sub": "Every piece below ran on a live client account. The room is dark on purpose — hover a piece and the light finds it."
   },
   "work": [
-    { "src": "/work/poster-career-connect.jpg", "w": 1000, "h": 1249, "title": "Career Connect ’26", "client": "Austrak Immigration", "category": "Campaigns", "note": "Event poster for UBIT, University of Karachi" },
-    { "src": "/work/poster-visa-success.jpg", "w": 1000, "h": 1500, "title": "Skilled Visa Success Story", "client": "Austrak Immigration", "category": "Campaigns", "note": "AI-assisted success-story creative" },
-    { "src": "/work/poster-germany.jpg", "w": 1000, "h": 1099, "title": "Germany Opportunity Card", "client": "Austrak Immigration", "category": "Campaigns", "note": "Consultancy campaign poster" },
-    { "src": "/work/poster-meet-greet.jpg", "w": 1122, "h": 1402, "title": "Meet & Greet — Study Abroad", "client": "Austrak Immigration", "category": "Campaigns", "note": "Event creative and promotion" },
-    { "src": "/work/post-it-1.jpg", "w": 1080, "h": 1080, "title": "Study in Italy", "client": "Study Abroad", "category": "Social", "note": "Social post design" },
-    { "src": "/work/post-study.jpg", "w": 1080, "h": 1350, "title": "Study Abroad Creative", "client": "Superior Consulting", "category": "Social", "note": "Feed post design and copy" },
-    { "src": "/work/post-poster.jpg", "w": 1131, "h": 1600, "title": "Campaign Poster", "client": "Superior Consulting", "category": "Social", "note": "Promotional poster design" },
-    { "src": "/work/post-clinic-health.jpg", "w": 1000, "h": 1500, "title": "Women’s Health Services", "client": "Homeopathic Clinic", "category": "Social", "note": "Service post for the clinic’s page" },
-    { "src": "/work/post-study-abroad.jpg", "w": 1000, "h": 1000, "title": "Admissions Open", "client": "Study Abroad", "category": "Social", "note": "Enrolment campaign creative" },
-    { "src": "/work/case-offer-letter.jpg", "w": 1000, "h": 1294, "title": "Offer Letter — Pakistan to Finland", "client": "Superior Consulting", "category": "Social", "note": "Results post: client admitted to SEAMK, Finland" },
-    { "src": "/work/ai-cinematic.jpg", "w": 896, "h": 1344, "title": "Golden Hour", "client": "AI Portrait Series", "category": "AI Content", "note": "AI-generated editorial portrait" },
-    { "src": "/work/ai-beauty.jpg", "w": 896, "h": 1344, "title": "Beauty Editorial", "client": "AI Portrait Series", "category": "AI Content", "note": "AI-generated beauty visual" },
-    { "src": "/work/ai-bridal.jpg", "w": 896, "h": 1344, "title": "Bridal Editorial", "client": "AI Portrait Series", "category": "AI Content", "note": "AI-generated bridal portrait" },
-    { "src": "/work/ai-fashion-man.jpg", "w": 896, "h": 1344, "title": "Menswear Editorial", "client": "AI Portrait Series", "category": "AI Content", "note": "AI-generated fashion visual" },
-    { "src": "/work/pin-bob.jpg", "w": 736, "h": 1104, "title": "Feathered Choppy Bob", "client": "Pinterest — Hair Content", "category": "Pinterest", "note": "Search-optimised pin design" },
-    { "src": "/work/pin-men.jpg", "w": 736, "h": 1104, "title": "13 Clean Hairstyles for Men", "client": "Pinterest — Hair Content", "category": "Pinterest", "note": "Search-optimised pin design" },
-    { "src": "/work/pin-women.jpg", "w": 736, "h": 1104, "title": "Medium-Length Hairstyles, 30+", "client": "Pinterest — Hair Content", "category": "Pinterest", "note": "Search-optimised pin design" },
-    { "src": "/work/pin-wolfcut.jpg", "w": 736, "h": 1104, "title": "Black & Red Wolf Cut", "client": "Pinterest — Hair Content", "category": "Pinterest", "note": "Search-optimised pin design" },
-    { "src": "/work/web-omnifood.jpg", "w": 272, "h": 1600, "title": "Omnifood", "client": "Website Design", "category": "Web", "note": "Landing page design" },
-    { "src": "/work/web-fastcuisine.jpg", "w": 451, "h": 1600, "title": "FastCuisine", "client": "Website Design", "category": "Web", "note": "Restaurant site design" }
+    {
+      "src": "/work/poster-career-connect.jpg",
+      "w": 1000,
+      "h": 1249,
+      "title": "Career Connect ’26",
+      "client": "Austrak Immigration",
+      "category": "Campaigns",
+      "note": "Event poster for UBIT, University of Karachi"
+    },
+    {
+      "src": "/work/poster-visa-success.jpg",
+      "w": 1000,
+      "h": 1500,
+      "title": "Skilled Visa Success Story",
+      "client": "Austrak Immigration",
+      "category": "Campaigns",
+      "note": "AI-assisted success-story creative"
+    },
+    {
+      "src": "/work/poster-germany.jpg",
+      "w": 1000,
+      "h": 1099,
+      "title": "Germany Opportunity Card",
+      "client": "Austrak Immigration",
+      "category": "Campaigns",
+      "note": "Consultancy campaign poster"
+    },
+    {
+      "src": "/work/poster-meet-greet.jpg",
+      "w": 1122,
+      "h": 1402,
+      "title": "Meet & Greet — Study Abroad",
+      "client": "Austrak Immigration",
+      "category": "Campaigns",
+      "note": "Event creative and promotion"
+    },
+    {
+      "src": "/work/post-it-1.jpg",
+      "w": 1080,
+      "h": 1080,
+      "title": "Study in Italy",
+      "client": "Study Abroad",
+      "category": "Social",
+      "note": "Social post design"
+    },
+    {
+      "src": "/work/post-study.jpg",
+      "w": 1080,
+      "h": 1350,
+      "title": "Study Abroad Creative",
+      "client": "Superior Consulting",
+      "category": "Social",
+      "note": "Feed post design and copy"
+    },
+    {
+      "src": "/work/post-poster.jpg",
+      "w": 1131,
+      "h": 1600,
+      "title": "Campaign Poster",
+      "client": "Superior Consulting",
+      "category": "Social",
+      "note": "Promotional poster design"
+    },
+    {
+      "src": "/work/post-clinic-health.jpg",
+      "w": 1000,
+      "h": 1500,
+      "title": "Women’s Health Services",
+      "client": "Homeopathic Clinic",
+      "category": "Social",
+      "note": "Service post for the clinic’s page"
+    },
+    {
+      "src": "/work/post-study-abroad.jpg",
+      "w": 1000,
+      "h": 1000,
+      "title": "Admissions Open",
+      "client": "Study Abroad",
+      "category": "Social",
+      "note": "Enrolment campaign creative"
+    },
+    {
+      "src": "/work/case-offer-letter.jpg",
+      "w": 1000,
+      "h": 1294,
+      "title": "Offer Letter — Pakistan to Finland",
+      "client": "Superior Consulting",
+      "category": "Social",
+      "note": "Results post: client admitted to SEAMK, Finland"
+    },
+    {
+      "src": "/work/ai-cinematic.jpg",
+      "w": 896,
+      "h": 1344,
+      "title": "Golden Hour",
+      "client": "AI Portrait Series",
+      "category": "AI Content",
+      "note": "AI-generated editorial portrait"
+    },
+    {
+      "src": "/work/ai-beauty.jpg",
+      "w": 896,
+      "h": 1344,
+      "title": "Beauty Editorial",
+      "client": "AI Portrait Series",
+      "category": "AI Content",
+      "note": "AI-generated beauty visual"
+    },
+    {
+      "src": "/work/ai-bridal.jpg",
+      "w": 896,
+      "h": 1344,
+      "title": "Bridal Editorial",
+      "client": "AI Portrait Series",
+      "category": "AI Content",
+      "note": "AI-generated bridal portrait"
+    },
+    {
+      "src": "/work/ai-fashion-man.jpg",
+      "w": 896,
+      "h": 1344,
+      "title": "Menswear Editorial",
+      "client": "AI Portrait Series",
+      "category": "AI Content",
+      "note": "AI-generated fashion visual"
+    },
+    {
+      "src": "/work/pin-bob.jpg",
+      "w": 736,
+      "h": 1104,
+      "title": "Feathered Choppy Bob",
+      "client": "Pinterest — Hair Content",
+      "category": "Pinterest",
+      "note": "Search-optimised pin design"
+    },
+    {
+      "src": "/work/pin-men.jpg",
+      "w": 736,
+      "h": 1104,
+      "title": "13 Clean Hairstyles for Men",
+      "client": "Pinterest — Hair Content",
+      "category": "Pinterest",
+      "note": "Search-optimised pin design"
+    },
+    {
+      "src": "/work/pin-women.jpg",
+      "w": 736,
+      "h": 1104,
+      "title": "Medium-Length Hairstyles, 30+",
+      "client": "Pinterest — Hair Content",
+      "category": "Pinterest",
+      "note": "Search-optimised pin design"
+    },
+    {
+      "src": "/work/pin-wolfcut.jpg",
+      "w": 736,
+      "h": 1104,
+      "title": "Black & Red Wolf Cut",
+      "client": "Pinterest — Hair Content",
+      "category": "Pinterest",
+      "note": "Search-optimised pin design"
+    },
+    {
+      "src": "/work/web-omnifood.jpg",
+      "w": 272,
+      "h": 1600,
+      "title": "Omnifood",
+      "client": "Website Design",
+      "category": "Web",
+      "note": "Landing page design"
+    },
+    {
+      "src": "/work/web-fastcuisine.jpg",
+      "w": 451,
+      "h": 1600,
+      "title": "FastCuisine",
+      "client": "Website Design",
+      "category": "Web",
+      "note": "Restaurant site design"
+    }
   ],
   "proofSection": {
     "backdropWord": "RESULTS",
@@ -149,13 +386,37 @@
     "reportsSub": "Campaign reports from live accounts — the spreadsheets behind the headline numbers."
   },
   "proof": [
-    { "title": "Pinterest growth", "metric": "+139%", "detail": "Monthly impressions 3.35M → 8.02M; engagements 134K → 324K while sole manager of the account.", "before": "/work/pin-growth-before.jpg", "after": "/work/pin-growth-after.jpg" },
-    { "title": "YouTube SEO", "metric": "58.1K views", "detail": "Titles, descriptions and keyword work took a family-run channel to 58.1K views and 123.4 watch hours in 90 days.", "before": "/work/yt-before.jpg", "after": "/work/yt-after.jpg" }
+    {
+      "title": "Pinterest growth",
+      "metric": "+139%",
+      "detail": "Monthly impressions 3.35M → 8.02M; engagements 134K → 324K while sole manager of the account.",
+      "before": "/work/pin-growth-before.jpg",
+      "after": "/work/pin-growth-after.jpg"
+    },
+    {
+      "title": "YouTube SEO",
+      "metric": "58.1K views",
+      "detail": "Titles, descriptions and keyword work took a family-run channel to 58.1K views and 123.4 watch hours in 90 days.",
+      "before": "/work/yt-before.jpg",
+      "after": "/work/yt-after.jpg"
+    }
   ],
   "reports": [
-    { "src": "/work/report-study-abroad.jpg", "title": "Study Abroad campaign report", "detail": "323 leads at Rs81 each" },
-    { "src": "/work/report-sweden-finland.jpg", "title": "Sweden & Finland report", "detail": "Destination campaign results" },
-    { "src": "/work/report-immigration.jpg", "title": "Immigration campaign report", "detail": "Lead campaign performance" }
+    {
+      "src": "/work/report-study-abroad.jpg",
+      "title": "Study Abroad campaign report",
+      "detail": "323 leads at Rs81 each"
+    },
+    {
+      "src": "/work/report-sweden-finland.jpg",
+      "title": "Sweden & Finland report",
+      "detail": "Destination campaign results"
+    },
+    {
+      "src": "/work/report-immigration.jpg",
+      "title": "Immigration campaign report",
+      "detail": "Lead campaign performance"
+    }
   ],
   "experience": {
     "eyebrow": "Experience",
@@ -225,9 +486,43 @@
     "headingAccent": "tools"
   },
   "skillGroups": [
-    { "title": "Paid & Social Marketing", "items": ["Meta Ads Manager", "Meta Business Suite", "Content calendars", "Copywriting", "Short-form scripting, voiceover & editing", "Pinterest & Facebook page management", "YouTube & Pinterest SEO"] },
-    { "title": "AI & Creative Tools", "items": ["Claude", "ChatGPT", "Gemini", "Grok", "Midjourney", "Google Flow", "Prompt writing", "Canva", "CapCut"] },
-    { "title": "Operations & Outreach", "items": ["B2B & B2C email outreach", "Google Sheets databases", "CRM software", "Reporting", "Recruitment & interview coordination", "Candidate sourcing — LinkedIn, Indeed"] }
+    {
+      "title": "Paid & Social Marketing",
+      "items": [
+        "Meta Ads Manager",
+        "Meta Business Suite",
+        "Content calendars",
+        "Copywriting",
+        "Short-form scripting, voiceover & editing",
+        "Pinterest & Facebook page management",
+        "YouTube & Pinterest SEO"
+      ]
+    },
+    {
+      "title": "AI & Creative Tools",
+      "items": [
+        "Claude",
+        "ChatGPT",
+        "Gemini",
+        "Grok",
+        "Midjourney",
+        "Google Flow",
+        "Prompt writing",
+        "Canva",
+        "CapCut"
+      ]
+    },
+    {
+      "title": "Operations & Outreach",
+      "items": [
+        "B2B & B2C email outreach",
+        "Google Sheets databases",
+        "CRM software",
+        "Reporting",
+        "Recruitment & interview coordination",
+        "Candidate sourcing — LinkedIn, Indeed"
+      ]
+    }
   ],
   "packagesSection": {
     "eyebrow": "HeavenLabs — Creator Growth",
@@ -241,10 +536,64 @@
     "perLabel": "/month"
   },
   "packages": [
-    { "name": "Pearl", "price": "35,000", "tag": "Posting & Management", "line": "You create it, we run your page.", "features": ["12 posts per month", "Captions & hashtags", "Content calendar", "Basic account handling", "Monthly performance summary"] },
-    { "name": "Amethyst", "price": "55,000", "tag": "Edit & Manage", "line": "You shoot it, we shape and grow it.", "features": ["16 posts per month", "Up to 8 edited videos", "Up to 8 content ideas & scripts", "1 paid campaign", "Full account handling", "Bi-weekly check-in call"] },
-    { "name": "Sapphire", "price": "75,000", "tag": "Create & Manage", "line": "We help you create it too.", "features": ["20 posts per month", "Up to 12 edited videos", "Up to 12 content ideas & scripts", "1 shoot session (Sunday, 4 hrs)", "Up to 6 female voiceovers", "Up to 2 paid campaigns"] },
-    { "name": "Diamond", "price": "100,000", "tag": "Full Service", "line": "Everything handled, end to end.", "features": ["30 posts per month", "Up to 16 edited videos", "Up to 16 content ideas & scripts", "2 shoot sessions (Sundays)", "Faceless female actor on shoot days", "Up to 10 female voiceovers", "Up to 4 paid campaigns", "Weekly strategy call & report"], "primary": true }
+    {
+      "name": "Pearl",
+      "price": "35,000",
+      "tag": "Posting & Management",
+      "line": "You create it, we run your page.",
+      "features": [
+        "12 posts per month",
+        "Captions & hashtags",
+        "Content calendar",
+        "Basic account handling",
+        "Monthly performance summary"
+      ]
+    },
+    {
+      "name": "Amethyst",
+      "price": "55,000",
+      "tag": "Edit & Manage",
+      "line": "You shoot it, we shape and grow it.",
+      "features": [
+        "16 posts per month",
+        "Up to 8 edited videos",
+        "Up to 8 content ideas & scripts",
+        "1 paid campaign",
+        "Full account handling",
+        "Bi-weekly check-in call"
+      ]
+    },
+    {
+      "name": "Sapphire",
+      "price": "75,000",
+      "tag": "Create & Manage",
+      "line": "We help you create it too.",
+      "features": [
+        "20 posts per month",
+        "Up to 12 edited videos",
+        "Up to 12 content ideas & scripts",
+        "1 shoot session (Sunday, 4 hrs)",
+        "Up to 6 female voiceovers",
+        "Up to 2 paid campaigns"
+      ]
+    },
+    {
+      "name": "Diamond",
+      "price": "100,000",
+      "tag": "Full Service",
+      "line": "Everything handled, end to end.",
+      "features": [
+        "30 posts per month",
+        "Up to 16 edited videos",
+        "Up to 16 content ideas & scripts",
+        "2 shoot sessions (Sundays)",
+        "Faceless female actor on shoot days",
+        "Up to 10 female voiceovers",
+        "Up to 4 paid campaigns",
+        "Weekly strategy call & report"
+      ],
+      "primary": true
+    }
   ],
   "contact": {
     "eyebrow": "Get in touch",
