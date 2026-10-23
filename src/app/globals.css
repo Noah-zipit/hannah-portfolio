@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #14100b;
-  --color-coal: #1d1712;
-  --color-panel: #241c14;
-  --color-line: #3a2f22;
-  --color-cream: #f4ecdc;
-  --color-sand: #b3a68d;
-  --color-faint: #7d7261;
-  --color-amber: #e39a2d;
-  --color-amber-deep: #b97a1c;
+  --color-ink: #1b1717;
+  --color-coal: #221c1c;
+  --color-panel: #2a2121;
+  --color-line: #4a3b3b;
+  --color-cream: #edebdd;
+  --color-sand: #b7ac9b;
+  --color-faint: #8b7d71;
+  --color-cherry: #810100;
+  --color-maroon: #630000;
+  --color-rose: #d96a5c;
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Manrope", system-ui, sans-serif;
 }
@@ -26,8 +27,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-amber);
-  color: var(--color-ink);
+  background: var(--color-cherry);
+  color: var(--color-cream);
 }
 
 /* subtle film-grain texture using flat colour specks */
@@ -42,7 +43,7 @@ body {
 }
 
 .text-outline {
-  -webkit-text-stroke: 1.5px rgba(244, 236, 220, 0.16);
+  -webkit-text-stroke: 1.5px rgba(237, 235, 221, 0.15);
   color: transparent;
 }
 
@@ -52,21 +53,11 @@ body {
 }
 
 .marquee-track {
-  animation: marquee 30s linear infinite;
-  will-change: transform;
-}
-
-@keyframes drift {
-  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
-  50% { transform: translateY(-14px) rotate(var(--rot, 0deg)); }
-}
-
-.drift {
-  animation: drift 7s ease-in-out infinite;
+  animation: marquee 26s linear infinite;
   will-change: transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track, .drift { animation: none; }
+  .marquee-track { animation: none; }
   html { scroll-behavior: auto; }
 }

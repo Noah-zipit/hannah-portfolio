@@ -20,7 +20,7 @@ export default function Counter({
 
   useEffect(() => {
     if (!inView) return;
-    const dur = 1600;
+    const dur = 1100;
     const start = performance.now();
     let raf = 0;
     const tick = (now: number) => {

@@ -16,7 +16,7 @@ export default function Work() {
   return (
     <section id="work" className="relative mx-auto max-w-7xl px-6 py-24">
       <Reveal>
-        <p className="text-xs font-bold tracking-[0.22em] text-amber uppercase">Selected work</p>
+        <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">Selected work</p>
         <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
           Real campaigns, <span className="italic">real numbers</span>
         </h2>
@@ -35,8 +35,8 @@ export default function Work() {
               onClick={() => setActive(f)}
               className={`rounded-full px-5 py-2 text-sm font-semibold transition-all duration-300 ${
                 active === f
-                  ? "bg-amber text-ink"
-                  : "border border-line text-sand hover:border-amber hover:text-cream"
+                  ? "bg-cherry text-cream"
+                  : "border border-line text-sand hover:border-cherry hover:text-cream"
               }`}
             >
               {f}
@@ -70,13 +70,13 @@ export default function Work() {
                     }
                     loading="lazy"
                   />
-                  <span className="absolute top-3 left-3 rounded-full bg-ink/80 px-3 py-1 text-[11px] font-bold tracking-wide text-amber uppercase backdrop-blur-sm">
+                  <span className="absolute top-3 left-3 rounded-full bg-ink/80 px-3 py-1 text-[11px] font-bold tracking-wide text-rose uppercase backdrop-blur-sm">
                     {item.category}
                   </span>
                 </div>
                 <div className="p-5">
                   <h3 className="font-display text-lg leading-snug font-semibold">{item.title}</h3>
-                  <p className="mt-0.5 text-sm font-semibold text-amber">{item.client}</p>
+                  <p className="mt-0.5 text-sm font-semibold text-rose">{item.client}</p>
                   <p className="mt-1.5 text-sm leading-relaxed text-sand">{item.note}</p>
                 </div>
               </TiltCard>

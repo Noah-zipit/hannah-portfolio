@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 export default function TiltCard({
   children,
   className = "",
-  max = 9,
+  max = 7,
 }: {
   children: React.ReactNode;
   className?: string;
