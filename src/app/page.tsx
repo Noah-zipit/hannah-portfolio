@@ -6,7 +6,7 @@ import Proof from "@/components/Proof";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import TiltCard from "@/components/TiltCard";
-import { profile, stats, statsExtra, statsHeroNote, roles, skillGroups, packages, packagesSection, marqueeItems, navContent, aboutSection, experienceSection, skillsSection, contactSection } from "@/data/content";
+import { profile, stats, statsExtra, statsHeroNote, roles, skillGroups, marqueeItems, navContent, aboutSection, experienceSection, skillsSection, contactSection } from "@/data/content";
 
 function Nav() {
   return (
@@ -200,74 +200,6 @@ function Skills() {
   );
 }
 
-function Packages() {
-  return (
-    <section id="packages" className="mx-auto max-w-7xl px-6 py-24">
-      <Reveal>
-        <p className="text-xs font-bold tracking-[0.22em] text-rose uppercase">{packagesSection.eyebrow}</p>
-        <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-          {packagesSection.headingLead} <span className="italic">{packagesSection.headingAccent}</span>
-        </h2>
-        <p className="mt-4 max-w-2xl text-sand">
-          {packagesSection.intro}
-        </p>
-      </Reveal>
-
-      <div className="mt-12 grid items-start gap-6 sm:grid-cols-2 xl:grid-cols-4">
-        {packages.map((pkg, i) => (
-          <Reveal key={pkg.name} delay={i * 0.07} className="h-full">
-            <div
-              className={`flex h-full flex-col rounded-3xl p-7 ${
-                pkg.primary
-                  ? "border-2 border-cherry bg-panel xl:-translate-y-4"
-                  : "border border-line bg-coal"
-              }`}
-            >
-              <div className="min-h-[118px]">
-                {pkg.primary ? (
-                  <span className="mb-4 inline-block rounded-full bg-cherry px-3 py-1 text-[11px] font-extrabold tracking-wider text-cream uppercase">
-                    Full service
-                  </span>
-                ) : (
-                  <p className="text-xs font-bold tracking-[0.2em] text-faint uppercase">{pkg.tag}</p>
-                )}
-                <h3 className={`font-display font-bold ${pkg.primary ? "mt-1 text-4xl" : "mt-1 text-3xl"}`}>{pkg.name}</h3>
-                <p className="mt-2 text-sm text-sand italic">{pkg.line}</p>
-              </div>
-              <p className="mt-6 flex flex-nowrap items-baseline gap-x-1.5">
-                <span className="text-sm font-extrabold whitespace-nowrap text-rose">{packagesSection.currency}</span>
-                <span className={`font-display text-4xl font-black whitespace-nowrap ${pkg.primary ? "text-rose" : ""}`}>{pkg.price}</span>
-                <span className="text-sm whitespace-nowrap text-faint">{packagesSection.perLabel}</span>
-              </p>
-              <ul className="mt-6 flex-1 space-y-2.5">
-                {pkg.features.map((f) => (
-                  <li key={f} className="flex gap-2.5 text-sm leading-relaxed text-sand">
-                    <span aria-hidden className="mt-0.5 font-bold text-rose">✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#contact"
-                className={`mt-8 rounded-full py-3 text-center text-sm font-bold transition-transform duration-300 hover:scale-[1.03] active:scale-95 ${
-                  pkg.primary ? "bg-cherry text-cream" : "border border-line text-cream hover:border-cherry hover:text-rose"
-                }`}
-              >
-                {packagesSection.ctaPrefix} {pkg.name}
-              </a>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-      <Reveal delay={0.1}>
-        <p className="mt-8 text-sm text-faint">
-          {packagesSection.footnote}
-        </p>
-      </Reveal>
-    </section>
-  );
-}
-
 function Contact() {
   return (
     <footer id="contact" className="grain relative overflow-hidden border-t border-line bg-coal">
@@ -319,7 +251,6 @@ export default function Home() {
       </div>
       <Experience />
       <Skills />
-      <Packages />
       <Contact />
     </main>
   );

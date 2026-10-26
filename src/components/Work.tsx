@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import TiltCard from "./TiltCard";
 import Reveal from "./Reveal";
 import { work, type WorkItem , workSection } from "@/data/content";
 
@@ -47,29 +46,24 @@ export default function Work() {
         </div>
       </Reveal>
 
-      <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3 xl:columns-4">
+      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <AnimatePresence mode="popLayout">
           {shown.map((item, idx) => (
             <motion.article
               key={item.src}
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.96 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.35, ease: [0.22, 0.8, 0.24, 1] }}
-              className="mb-6 break-inside-avoid"
             >
-              <TiltCard className="group">
+              <div className="group h-full overflow-hidden rounded-2xl border border-line bg-coal">
                 <div className="relative">
                   <Image
                     src={item.src}
                     alt={`${item.title} — ${item.note}`}
                     width={item.w}
                     height={item.h}
-                    className={
-                      item.category === "Web"
-                        ? "aspect-[3/4] w-full object-cover object-top"
-                        : "h-auto w-full"
-                    }
+                    className="aspect-[4/5] w-full object-cover object-top"
                     loading="lazy"
                   />
                   <div aria-hidden className="pointer-events-none absolute inset-0 z-[5] bg-ink/40 transition-opacity duration-500 group-hover:opacity-0" />
@@ -83,7 +77,7 @@ export default function Work() {
                   <p className="mt-0.5 text-sm font-semibold text-rose">{item.client}</p>
                   <p className="mt-1.5 text-sm leading-relaxed text-sand">{item.note}</p>
                 </div>
-              </TiltCard>
+              </div>
             </motion.article>
           ))}
         </AnimatePresence>

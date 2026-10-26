@@ -4,7 +4,7 @@
     "description": "Portfolio of Hannah Iqbal, a Karachi-based digital marketer. 323 study-abroad leads at $0.29 each, 2,213 clinic enquiries at $0.05 each, and Pinterest growth from 3.35M to 8.02M impressions.",
     "ogTitle": "Hannah Iqbal — Digital Marketer",
     "ogDescription": "Meta Ads, short-form video and AI content that turn small budgets into real enquiries. Based in Karachi, working worldwide.",
-    "ogImage": "/work/adcampaignreport.png"
+    "ogImage": "/work/ai-cinematic.jpg"
   },
   "profile": {
     "name": "Hannah Iqbal",
@@ -33,10 +33,6 @@
       {
         "label": "Experience",
         "href": "#experience"
-      },
-      {
-        "label": "Packages",
-        "href": "#packages"
       }
     ],
     "ctaLabel": "Hire me",
@@ -58,7 +54,7 @@
       "href": "#contact"
     },
     "imageA": {
-      "src": "/work/pin-growth-after.jpg",
+      "src": "/work/ai-cinematic.jpg",
       "alt": "AI-generated editorial portrait from Hannah's portrait series",
       "caption": "AI content direction"
     },
@@ -162,8 +158,8 @@
         "accent": "3.35M → 8.02M impressions.",
         "body": "As sole manager of a Pinterest account promoting multiple client websites, Hannah designed every pin, wrote search-focused titles and descriptions, and scheduled the calendar. Monthly impressions grew from 3.35M to 8.02M; engagements climbed from 134K to 324K.",
         "meta": "Pinterest SEO · Pin design · Scheduling — Part-time, Remote",
-        "img": "/work/pin-bob.jpg",
-        "alt": "Pinterest pin designed by Hannah — feathered choppy bob hairstyle feature"
+        "img": "/work/pin-women.jpg",
+        "alt": "Pinterest pin designed by Hannah — medium-length hairstyles feature"
       }
     ],
     "quote": {
@@ -319,15 +315,6 @@
       "client": "AI Portrait Series",
       "category": "AI Content",
       "note": "AI-generated fashion visual"
-    },
-    {
-      "src": "/work/pin-bob.jpg",
-      "w": 736,
-      "h": 1104,
-      "title": "Feathered Choppy Bob",
-      "client": "Pinterest — Hair Content",
-      "category": "Pinterest",
-      "note": "Search-optimised pin design"
     },
     {
       "src": "/work/pin-men.jpg",

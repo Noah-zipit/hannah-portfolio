@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { profile, hero } from "@/data/content";
@@ -11,12 +10,9 @@ export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
 
-  // Parallax layers — back word slowest, images at different speeds
+  // Parallax layers — back word slowest, text drifts gently
   const yWord = useTransform(scrollYProgress, [0, 1], [0, 48]);
   const yText = useTransform(scrollYProgress, [0, 1], [0, 22]);
-  const yImgA = useTransform(scrollYProgress, [0, 1], [0, -28]);
-  const yImgB = useTransform(scrollYProgress, [0, 1], [0, -56]);
-  const yImgC = useTransform(scrollYProgress, [0, 1], [0, -14]);
 
   return (
     <header ref={ref} className="grain relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
@@ -32,8 +28,8 @@ export default function Hero() {
       {/* pool of cherry light behind the hero pieces */}
       <div aria-hidden className="absolute top-10 right-[2%] hidden h-[480px] w-[560px] lg:block" style={{ background: "radial-gradient(ellipse at 60% 30%, rgba(129,1,0,0.32), transparent 65%)" }} />
 
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-12">
-        <motion.div style={{ y: yText }} className="lg:col-span-7">
+      <div className="relative mx-auto max-w-7xl px-6">
+        <motion.div style={{ y: yText }} className="max-w-3xl">
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,47 +90,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* layered parallax image stack */}
-        <div className="relative h-[480px] sm:h-[540px] lg:col-span-5">
-          <motion.div
-            style={{ y: yImgB, ["--rot" as string]: "-5deg" }}
-            className="absolute top-0 right-2 w-52 sm:w-60"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.15, ease }}
-          >
-            <div className="overflow-hidden rounded-2xl border border-line" style={{ transform: "rotate(-5deg)" }}>
-              <Image src={hero.imageA.src} alt={hero.imageA.alt} width={480} height={640} className="aspect-[3/4] w-full object-cover" priority />
-            </div>
-            <p className="mt-2 text-right text-xs font-medium text-sand">{hero.imageA.caption}</p>
-          </motion.div>
-
-          <motion.div
-            style={{ y: yImgA, ["--rot" as string]: "4deg" }}
-            className="absolute bottom-16 left-0 w-48 sm:w-56"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.24, ease }}
-          >
-            <div className="overflow-hidden rounded-2xl border border-line" style={{ transform: "rotate(4deg)" }}>
-              <Image src={hero.imageB.src} alt={hero.imageB.alt} width={480} height={600} className="aspect-[4/5] w-full object-cover" priority />
-            </div>
-            <p className="mt-2 text-xs font-medium text-sand">{hero.imageB.caption}</p>
-          </motion.div>
-
-          <motion.div
-            style={{ y: yImgC }}
-            className="absolute right-6 bottom-0 hidden w-40 sm:block"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.32, ease }}
-          >
-            <div className="rounded-2xl border border-cherry/50 bg-panel p-4">
-              <p className="font-display text-3xl font-bold text-rose">{hero.statCard.value}</p>
-              <p className="mt-1 text-xs leading-snug text-sand">{hero.statCard.text}</p>
-            </div>
-          </motion.div>
-        </div>
       </div>
     </header>
   );
