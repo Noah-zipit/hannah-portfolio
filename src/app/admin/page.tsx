@@ -163,8 +163,12 @@ function ImageField({ label, value, onChange, api, note }: { label: string; valu
       <span className={labelCls}>{label}</span>
       <div className="flex items-center gap-3">
         {value ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={value} alt="" className="h-16 w-12 shrink-0 rounded-lg border border-line object-cover" />
+          /\.(mp4|webm|mov)$/i.test(value) ? (
+            <div className="flex h-16 w-12 shrink-0 items-center justify-center rounded-lg border border-line text-[10px] font-bold text-sand">VIDEO</div>
+          ) : (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={value} alt="" className="h-16 w-12 shrink-0 rounded-lg border border-line object-cover" />
+          )
         ) : (
           <div className="flex h-16 w-12 shrink-0 items-center justify-center rounded-lg border border-line text-[10px] text-faint">none</div>
         )}
@@ -183,8 +187,8 @@ function ImageField({ label, value, onChange, api, note }: { label: string; valu
             </div>
             {err && <p className="mb-3 rounded-xl border border-cherry bg-maroon/40 px-4 py-2 text-sm text-cream">{err}</p>}
             <label className="mb-5 flex cursor-pointer items-center justify-center rounded-2xl border border-dashed border-line px-4 py-6 text-sm font-bold text-sand transition-colors hover:border-cherry hover:text-cream">
-              {busy ? "Uploading…" : "＋ Upload a new image (JPG, PNG, WebP — max ~5MB)"}
-              <input type="file" accept="image/jpeg,image/png,image/webp,image/gif" className="hidden" disabled={busy} onChange={(e) => e.target.files?.[0] && upload(e.target.files[0])} />
+              {busy ? "Uploading…" : "＋ Upload a new image or video (JPG, PNG, WebP, MP4 — max ~5MB)"}
+              <input type="file" accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm,video/quicktime" className="hidden" disabled={busy} onChange={(e) => e.target.files?.[0] && upload(e.target.files[0])} />
             </label>
             {!images && !err && <p className="text-sm text-faint">Loading images…</p>}
             <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
@@ -380,7 +384,7 @@ export default function Admin() {
       const res = await api("save", { content, sha });
       setSha(res.sha);
       setSnapshot(JSON.stringify(content));
-      setStatus("Published ✓ — the site rebuilds itself and goes live in about a minute.");
+      setStatus("Published ✓ — the site rebuilds itself and goes live in about a minute. Still looks old? Hard-refresh your browser — it may be showing a saved copy.");
     } catch (e) {
       setError((e instanceof Error ? e.message : "Publish failed.") + " If the content changed elsewhere, use “Reload latest” and re-apply your change.");
       setStatus("");
@@ -618,7 +622,7 @@ export default function Admin() {
             <ObjList label="Pieces (filters are built from the categories you use)" itemName="Piece" items={g("work")} onChange={set("work")} api={api}
               blank={() => ({ src: "", w: 1000, h: 1250, title: "", client: "", category: "Social", note: "" })}
               fields={[
-                { key: "src", label: "Picture", type: "image" },
+                { key: "src", label: "Picture or video (upload a clip, then paste its path here)", type: "image" },
                 { key: "title", label: "Title", type: "text" },
                 { key: "client", label: "Client", type: "text" },
                 { key: "category", label: "Category (Campaigns, Social, AI Content, Pinterest, Web…)", type: "text" },
