@@ -58,14 +58,27 @@ export default function Work() {
             >
               <div className="group h-full overflow-hidden rounded-2xl border border-line bg-coal">
                 <div className="relative">
-                  <Image
-                    src={item.src}
-                    alt={`${item.title} — ${item.note}`}
-                    width={item.w}
-                    height={item.h}
-                    className="aspect-[4/5] w-full object-cover object-top"
-                    loading="lazy"
-                  />
+                  {/\.(mp4|webm|mov)$/i.test(item.src) ? (
+                    // eslint-disable-next-line jsx-a11y/media-has-caption
+                    <video
+                      src={item.src}
+                      controls
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="aspect-[4/5] w-full object-cover object-top"
+                    />
+                  ) : (
+                    <Image
+                      src={item.src}
+                      alt={`${item.title} — ${item.note}`}
+                      width={item.w}
+                      height={item.h}
+                      className="aspect-[4/5] w-full object-cover object-top"
+                      loading="lazy"
+                    />
+                  )}
                   <div aria-hidden className="pointer-events-none absolute inset-0 z-[5] bg-ink/40 transition-opacity duration-500 group-hover:opacity-0" />
                 </div>
                 <div className="border-t border-line p-5">
