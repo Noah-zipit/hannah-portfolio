@@ -120,8 +120,9 @@ async function actionImages() {
 
 async function actionUpload(body: { name: string; dataBase64: string }) {
   const clean = (body.name || "upload.jpg").split("/").pop()!.replace(/[^a-zA-Z0-9._-]/g, "-").toLowerCase();
-  if (!/\.(jpe?g|png|webp|gif)$/i.test(clean)) throw new Error("Only JPG, PNG, WebP or GIF images.");
-  if (!body.dataBase64 || body.dataBase64.length > 7_000_000) throw new Error("Image missing or too large (max ~5MB).");
+  const isVideo = /\.(mp4|webm|mov)$/i.test(clean);
+  if (!isVideo && !/\.(jpe?g|png|webp|gif)$/i.test(clean)) throw new Error("Only JPG, PNG, WebP, GIF images or MP4/WebM/MOV video.");
+  if (!body.dataBase64 || body.dataBase64.length > 7_000_000) throw new Error(isVideo ? "Video missing or too large (max ~5MB — keep clips short/compressed)." : "Image missing or too large (max ~5MB).");
   const path = `${IMAGE_DIR}/${clean}`;
   let sha: string | undefined;
   try {
