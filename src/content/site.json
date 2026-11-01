@@ -131,35 +131,53 @@
   },
   "stories": {
     "eyebrow": "Flagship results",
-    "headingLead": "Three campaigns,",
+    "headingLead": "Five campaigns,",
     "headingAccent": "told properly",
     "items": [
       {
         "client": "Homeopathic Clinic",
-        "headline": "2,213 conversations.",
-        "accent": "Five cents each.",
-        "body": "Two Meta lead campaigns for a Karachi clinic turned Rs30,877 into 2,213 messaging enquiries — about Rs14 ($0.05) apiece. Hannah wrote and designed the posts, built AI-assisted content, scheduled publishing, and sent the doctor an enquiry sheet and report every single day.",
-        "meta": "Meta Ads · AI content · Daily reporting — Freelance, 2026",
+        "headline": "158 conversations.",
+        "accent": "Three cents each.",
+        "body": "A three-day test (15–17 March) to see whether the clinic’s offer would start WhatsApp conversations. It did: 158 conversations at Rs7.20 ($0.03) on Rs1,137.72, reaching 3,111 people. A small test, shown as a test.",
+        "meta": "Meta Ads · Test campaign · Freelance · Mar 2026",
         "img": "/work/post-clinic-health.jpg",
         "alt": "Women's health services post designed for the clinic's page"
       },
       {
-        "client": "Austrak Immigration & Education",
-        "headline": "323 leads.",
-        "accent": "Twenty-nine cents each.",
-        "body": "Three Meta lead campaigns in a single month — October 2026 — produced 323 study-abroad leads for Rs26,285. In the same role she recovered the company's suspended Facebook page, restarted its publishing, and now advises students from first enquiry to visa submission.",
-        "meta": "Meta Ads · Content · Case processing — Full-time, Karachi",
+        "client": "Homeopathic Clinic",
+        "headline": "2,055 conversations.",
+        "accent": "Five cents each.",
+        "body": "The main run, May to 7 September: Rs29,739.54 at Rs500 a day reached 45,780 people and brought in 2,055 conversations at Rs14.47 ($0.05). I wrote and designed the posts, scheduled them, and sent the doctor an enquiry sheet and report every day. Together with the test, that’s 2,213 conversations on Rs30,877.",
+        "meta": "Meta Ads · AI content · Daily reporting · Freelance · 2026",
         "img": "/work/poster-visa-success.jpg",
         "alt": "Skilled visa success story poster designed for Austrak Immigration"
       },
       {
-        "client": "Artimization — Pinterest",
-        "headline": "+139% in a month.",
-        "accent": "3.35M → 8.02M impressions.",
+        "client": "Visa Consultancy",
+        "headline": "101 leads.",
+        "accent": "Twenty-two cents each.",
         "body": "As sole manager of a Pinterest account promoting multiple client websites, Hannah designed every pin, wrote search-focused titles and descriptions, and scheduled the calendar. Monthly impressions grew from 3.35M to 8.02M; engagements climbed from 134K to 324K.",
-        "meta": "Pinterest SEO · Pin design · Scheduling — Part-time, Remote",
+        "meta": "Meta Ads · Lead forms · Full-time · Oct 2026",
         "img": "/work/pin-women.jpg",
         "alt": "Pinterest pin designed by Hannah — medium-length hairstyles feature"
+      },
+      {
+        "client": "Visa Consultancy",
+        "headline": "82 leads.",
+        "accent": "Fifteen cents each.",
+        "body": "A Sweden-specific study-abroad campaign, run 20–22 October: 82 form leads on Rs3,435.49, Rs41.90 each ($0.15), reaching 7,972 people in three days.",
+        "meta": "",
+        "img": "",
+        "alt": "Meta Ads · Lead forms · Full-time · Oct 2026"
+      },
+      {
+        "client": "Visa Consultancy",
+        "headline": "140 leads.",
+        "accent": "Forty-three cents each.",
+        "body": "An immigration lead campaign, 9–22 October: 140 form leads on Rs16,653.64, Rs118.95 each ($0.43), reaching 22,459 people. The biggest of the three in spend and volume. Together the three Austrak campaigns brought in 323 leads on Rs26,285, about Rs81 ($0.29) each.",
+        "meta": "Meta Ads · Lead forms · Full-time · Oct 2026",
+        "img": "",
+        "alt": ""
       }
     ],
     "quote": {
