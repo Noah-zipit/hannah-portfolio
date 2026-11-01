@@ -84,8 +84,8 @@
     "heroNote": "— about Rs14 each (≈ US$0.05) · Pakistan market.",
     "extra": {
       "value": "324K",
-      "label": "Pinterest engagements",
-      "sub": "Up from 134K in a single month"
+      "label": "Pinterest monthly engagements",
+      "sub": "Up from 134K (+142%)"
     },
     "items": [
       {
@@ -98,34 +98,34 @@
         "value": 0.05,
         "decimals": 2,
         "prefix": "$",
-        "label": "Cost per enquiry",
-        "sub": "Rs14 average across two Meta campaigns"
+        "label": "Cost per enquiry · Pakistan market",
+        "sub": "Rs14 average across two Meta campaigns · Rs30,877 spend"
       },
       {
         "value": 323,
-        "label": "Study-abroad leads",
-        "sub": "Three Meta campaigns in a single month"
+        "label": "Study-abroad & immigration leads",
+        "sub": "Three Meta campaigns · Oct 2026"
       },
       {
         "value": 0.29,
         "decimals": 2,
         "prefix": "$",
-        "label": "Cost per lead",
+        "label": "Cost per lead · Pakistan market",
         "sub": "Rs81 average on Rs26,285 spend"
       },
       {
         "value": 8.02,
         "decimals": 2,
         "suffix": "M",
-        "label": "Pinterest impressions",
-        "sub": "Up from 3.35M — a 139% jump in one month"
+        "label": "Pinterest monthly impressions",
+        "sub": "Up from 3.35M (+139%) · fashion & lifestyle account · May–Jul 2026"
       },
       {
         "value": 58.1,
         "decimals": 1,
         "suffix": "K",
         "label": "YouTube views in 90 days",
-        "sub": "SEO-led growth on a family-run channel"
+        "sub": "SEO-led growth on an anime channel · 123.4 watch hours · +206 subscribers"
       }
     ]
   },
