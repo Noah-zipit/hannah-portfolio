@@ -20,11 +20,19 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://hannahiqbal.netlify.app"),
   title: seo.title,
   description: seo.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: seo.ogTitle,
     description: seo.ogDescription,
     type: "website",
-    images: [seo.ogImage],
+    url: "/",
+  },
+  twitter: {
+    card: "summary",
+    title: seo.ogTitle,
+    description: seo.ogDescription,
   },
 };
 
