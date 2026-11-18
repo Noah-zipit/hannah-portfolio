@@ -59,7 +59,6 @@ export default function Work() {
               <div className="group h-full overflow-hidden rounded-2xl border border-line bg-coal">
                 <div className="relative">
                   {/\.(mp4|webm|mov)$/i.test(item.src) ? (
-                    // eslint-disable-next-line jsx-a11y/media-has-caption
                     <video
                       src={item.src}
                       controls
