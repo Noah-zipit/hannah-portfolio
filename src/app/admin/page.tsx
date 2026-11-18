@@ -1,7 +1,8 @@
 "use client";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 
 // ---------- path helpers ----------
 function getPath(obj: any, path: string): any {
@@ -418,7 +419,7 @@ export default function Admin() {
           >
             {loggingIn ? "Checking…" : "Log in"}
           </button>
-          <a href="/" className="mt-6 inline-block text-sm font-semibold text-rose">← Back to the site</a>
+          <Link href="/" className="mt-6 inline-block text-sm font-semibold text-rose">← Back to the site</Link>
         </form>
       </main>
     );
